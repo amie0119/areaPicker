@@ -1,0 +1,27 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>我是一个级联选择器</title>
+  <link rel="stylesheet" href="areaPicker.css"/>
+</head>
+<body>
+  <!--目标容器-->
+  <div id="target"></div>
+  <script src="areaPicker.js"></script>
+  <script src="areas.js"></script>
+  <script>
+    var ua = navigator.userAgent;
+    var isMobile = /10/i.test(ua);
+    // 用来在真机测试
+    if (isMobile) {
+      document.write("<script src='vconsole.min.js'><\/script>");
+    }
+    new AreaPicker({
+      source: 'source', // 触发的 dom id
+      container: 'target', // 容器 id
+      data: area, // 自定义数据 
+    })
+  </script>
+</body>
+</html>
